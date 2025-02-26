@@ -27,10 +27,10 @@ void dis_env()
         // 复位传感器
         // if (resetSensor == true)
         // {
-        //   // Reinit Sensor
-        //   // initSensor();
-        //   initCO2();
-        //   resetSensor = false;
+        //     // Reinit Sensor
+        //     // initSensor();
+        //     initCO2();
+        //     resetSensor = false;
         // }
 
         if (scd4x.update()) // readMeasurement will return true when
@@ -39,6 +39,7 @@ void dis_env()
             co2 = scd4x.getCO2();
             temperature = scd4x.getTemperature();
             humidity = scd4x.getHumidity();
+            Serial.printf("co2 %02f, temperature %02f, humidity %02f\n", co2, temperature, humidity);
         }
 
         // // Floating point conversion according to datasheet

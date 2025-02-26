@@ -45,18 +45,18 @@ void setup()
   tempSprite.setColorDepth(24);
   tempSprite.createSprite(90, 40);
 
+  // Init CO2
+#ifdef USE_ENV
+  initCO2();
+#endif
+
   // view UI
   viewGUI();
 
   // view battery
   viewBattery();
 
-  // Init CO2
-#ifdef USE_ENV
-  initCO2();
-#endif
-
-  // init_time();
+  // init_time();//使用RTC设置程序初始化RTC时间
 
   // dis_state = 1;
   // dis_time();
@@ -64,7 +64,7 @@ void setup()
   dis_state = 2;
   dis_env();
 
-  timer.setInterval(1000L, Simple_timer);
+  timer.setInterval(5000L, Simple_timer);
 }
 
 // Main loop

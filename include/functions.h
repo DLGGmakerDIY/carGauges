@@ -59,20 +59,21 @@ void initCO2()
       delay(1);
   }
 
-  // uint16_t error;
-  // // stop potentially previously started measurement
-  // error = scd4x.stopPeriodicMeasurement();
-  // if (error)
-  // {
-  //   Serial.print("Error trying to execute stopPeriodicMeasurement(): ");
-  // }
+  uint16_t error;
+  // stop potentially previously started measurement
+  error = scd4x.stopPeriodicMeasurement();
+  if (error)
+  {
+    Serial.print("Error trying to execute stopPeriodicMeasurement(): ");
+  }
 
-  // // Start Measurement
-  // error = scd4x.startPeriodicMeasurement();
-  // if (error)
-  // {
-  //   Serial.print("Error trying to execute startPeriodicMeasurement(): ");
-  // }
+  // Start Measurement
+  error = scd4x.startPeriodicMeasurement();
+  if (error)
+  {
+    Serial.print("Error trying to execute startPeriodicMeasurement(): ");
+  }
+  Serial.println("Waiting for first measurement... (5 sec)");
 }
 
 // Init sensor SCD4x
